@@ -8,22 +8,7 @@ html {
   font-family: Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
 }
-.pc,
-.tablet,
-.mobile {
-}
-/*pc >= 1024*/
-@media (min-width: 1024px) {
-}
-/*tablet (740  to  < 1024)*/
-@media (min-width: 740px) and (max-width: 1024px) {
-}
-/*mobile <740 px*/
-@media (max-width: 740px) {
-}
-/*PC: >= 1024px
-  table: >=740 & < 1024
-  moble: < 740*/
+
 /*
 1. Vi tri
 2. kich thuoc
@@ -127,15 +112,30 @@ html {
 #nav .nav-arrow-down {
   font-size: 14px;
 }
-#header .search-btn {
+#header .mobile-menu-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+}
+#header .search-btn,
+#header .mobile-menu-btn {
   float: right;
   padding: 12px 30px;
 }
+
 #header .search-btn:hover {
   cursor: pointer;
   background-color: rgba(255, 0, 0, 0.397);
 }
-#header .search-icon {
+#header .mobile-menu-btn:hover {
+  background-color: #ccc;
+}
+#header .mobile-menu-btn:hover .mobile-menu-icon {
+  color: #000;
+}
+#header .search-icon,
+#header .mobile-menu-icon {
   color: #fff;
   font-size: 20px;
   list-style: 46px;
@@ -168,9 +168,12 @@ html {
 }
 #content .content-section {
   width: 800px;
+  max-width: 100%;
   padding: 60px 0 102px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 #content .section-heading {
   font-size: 30px;
@@ -193,7 +196,7 @@ html {
   line-height: 1.6;
 }
 #content .movies-list {
-  margin-top: 48px;
+  margin-top: 32px;
 }
 #content .movie-item {
   float: left;
@@ -231,7 +234,7 @@ html {
   margin-left: 16px;
 }
 .place-list {
-  margin-top: 32px;
+  margin-top: 16px;
 }
 .place-item {
   width: 33.333%;
@@ -268,6 +271,7 @@ html {
   display: inline-block;
   margin-top: 15px;
   border: none;
+  text-align: center;
 }
 .btn:hover {
   color: #000;
@@ -296,7 +300,7 @@ html {
 }
 .map-section img {
   width: 100%;
-  height: 50%;
+  height: 35%;
 }
 /*Footer section*/
 #footer {

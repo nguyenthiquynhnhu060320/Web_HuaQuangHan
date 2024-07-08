@@ -1,0 +1,85 @@
+/*pc >= 1024*/
+@media (min-width: 1024px) {
+}
+/*tablet (740  to  < 1024)*/
+@media (min-width: 740px) and (max-width: 1023px) {
+  .btn {
+    padding: 15px 16px;
+  }
+  .contact-form {
+    margin-top: 16px;
+  }
+  .contact-form .form-control {
+    padding: 15px;
+  }
+  #footer .social-list {
+    font-size: 38px;
+  }
+  #footer .social-list a {
+    margin: 0 8px;
+  }
+  #footer .coppy-right {
+    padding: 12px 0;
+    display: inline-block;
+  }
+  .contact-info i {
+    line-height: 3;
+  }
+}
+/*mobile <740 px*/
+@media (max-width: 740px) {
+  .s-full-width,
+  .s-col-full {
+    width: 100% !important;
+  }
+  .s-mt-8 {
+    margin-top: 8px;
+  }
+  #header {
+    overflow: hidden;
+  }
+  #header .mobile-menu-btn {
+    display: block;
+  }
+  #header .search-btn {
+    display: none;
+  }
+
+  #slider .text-content {
+    bottom: 10px;
+  }
+  #slider .text-heading {
+    font-size: 15px;
+  }
+  #nav {
+    display: block;
+  }
+  #nav > li {
+    display: block;
+  }
+  #nav li a {
+    padding: 1px 24px;
+  }
+  #nav .subnav {
+    position: initial;
+    background-color: #333;
+  }
+  #nav .subnav a {
+    color: #fff;
+    padding: 5px 40px;
+  }
+
+  #content .movie-img {
+    width: 60%;
+    margin: 5px 65px;
+  }
+  .placec-img {
+    height: 500px;
+  }
+  .contact-info {
+    margin-top: 32px;
+  }
+}
+/*PC: >= 1024px
+  table: >=740 & < 1024
+  moble: < 740*/

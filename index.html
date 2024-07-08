@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HuaQuangHan</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
     <link
       rel="stylesheet"
       href="./assets/Fonts/themify-icons/themify-icons.css"
@@ -20,7 +21,7 @@
           <li><a href="#schedule">Schedule</a></li>
           <li><a href="#contact">Contact</a></li>
           <li>
-            <a href=""
+            <a href="#"
               >More
               <i class="nav-arrow-down ti-angle-down"></i>
             </a>
@@ -33,9 +34,13 @@
         </ul>
         <!--end nav-->
         <!--begin search-->
+        <div id="mobile-menu" class="mobile-menu-btn">
+          <i class="mobile-menu-icon ti-menu"></i>
+        </div>
         <div class="search-btn">
           <i class="search-icon ti-search"></i>
         </div>
+
         <!--End search-->
       </div>
 
@@ -66,8 +71,8 @@
             his charming personality and dedication to his craft, Hsu's slogan
             is "May this world remain as beautiful as it was in the beginning.
           </p>
-          <div class="movies-list">
-            <div class="movie-item">
+          <div class="row movies-list">
+            <div class="col col-third s-col-full mt-16 text-center">
               <p class="movie-name">Someday or One Day</p>
               <img
                 src="./assets/img/Movie/movie1.jpg"
@@ -75,7 +80,7 @@
                 class="movie-img"
               />
             </div>
-            <div class="movie-item">
+            <div class="col col-third s-col-full mt-16 text-center">
               <p class="movie-name">My Love</p>
               <img
                 src="./assets/img/Movie/movie2.jpg"
@@ -83,7 +88,7 @@
                 class="movie-img"
               />
             </div>
-            <div class="movie-item">
+            <div class="col col-third s-col-full mt-16 text-center">
               <p class="movie-name">Beyond Youthful Days</p>
               <img
                 src="./assets/img/Movie/movie3.jpg"
@@ -107,7 +112,7 @@
               <li>June <span class="duties">None</span></li>
             </ul>
             <div class="row place-list">
-              <div class="col col-third">
+              <div class="col col-third s-col-full mt-16">
                 <img
                   src="./assets/img/Schedule/schedule3.jpg"
                   alt="ELLE"
@@ -121,10 +126,10 @@
                     It's also has international editions in countries like China
                     and Malaysia.
                   </p>
-                  <a href="#" class="btn">Click to view</a>
+                  <a href="#" class="btn s-col-full">Click to view</a>
                 </div>
               </div>
-              <div class="col col-third">
+              <div class="col col-third s-col-full mt-16">
                 <img
                   src="./assets/img/Schedule/schedule2.jpg"
                   alt="ELLE"
@@ -138,10 +143,10 @@
                     It's also has international editions in countries like China
                     and Malaysia.
                   </p>
-                  <a href="#" class="btn">Click to view</a>
+                  <a href="#" class="btn s-col-full">Click to view</a>
                 </div>
               </div>
-              <div class="col col-third">
+              <div class="col col-third s-col-full mt-16">
                 <img
                   src="./assets/img/Schedule/schedule5.jpg"
                   alt="ELLE"
@@ -155,7 +160,7 @@
                     It's also has international editions in countries like China
                     and Malaysia.
                   </p>
-                  <a href="#" class="btn">Click to view</a>
+                  <a href="#" class="btn s-col-full">Click to view</a>
                 </div>
               </div>
               <div class="clear"></div>
@@ -168,15 +173,15 @@
           <p class="section-sub-heading">Fan? Drop a note!!!</p>
 
           <div class="row contact-content">
-            <div class="col col-haft contact-info">
+            <div class="col col-haft s-col-full contact-info">
               <p><i class="ti-location-pin"></i>Taipei City 105</p>
               <p><i class="ti-mobile"></i>Phone: +886-2-2717-2588</p>
               <p><i class="ti-world"></i>Catchplay Group</p>
             </div>
-            <div class="col col-haft contact-form">
+            <div class="col col-haft s-col-full contact-form">
               <form action="">
                 <div class="row">
-                  <div class="col col-haft">
+                  <div class="col col-haft s-col-full">
                     <input
                       type="text"
                       name=""
@@ -184,7 +189,7 @@
                       class="form-control"
                     />
                   </div>
-                  <div class="col col-haft">
+                  <div class="col col-haft s-col-full s-mt-8">
                     <input
                       type="email"
                       name=""
@@ -204,7 +209,7 @@
                   </div>
                 </div>
                 <input
-                  class="btn pull-right mt-16"
+                  class="btn pull-right mt-16 s-full-width"
                   type="submit"
                   value="SEND"
                 />
@@ -229,5 +234,35 @@
         <p class="coppy-right">Power By <a href="#">w3.css</a></p>
       </div>
     </div>
+    <script>
+      var header = document.getElementById("header");
+      var mobileMenu = document.getElementById("mobile-menu");
+      var headerHeight = header.clientHeight;
+      // Close/Open the mobile menu
+      mobileMenu.onclick = function () {
+        var isClose = header.clientHeight === headerHeight;
+        if (isClose) {
+          header.style.height = "auto";
+        } else {
+          header.style.height = null;
+        }
+      };
+      // Auto close the mobile menu
+      var MenuItems = document.querySelectorAll('#nav li a[href*="#"]');
+      for (var i = 0; i < MenuItems.length; i++) {
+        var menuItem = MenuItems[i];
+        menuItem.onclick = function (event) {
+          var isParentMenu =
+            this.nextElementSibling &&
+            menuItem.nextElementSibling.classList.contains("subnav");
+
+          if (isParentMenu) {
+            event.preventDefault();
+          } else {
+            header.style.height = null;
+          }
+        };
+      }
+    </script>
   </body>
 </html>
